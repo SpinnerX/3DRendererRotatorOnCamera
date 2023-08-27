@@ -6,6 +6,8 @@ project(${PROJECT_NAME} VERSION 0.1.0 LANGUAGES C CXX)
 # This is how we are able to simply just include 
 # Ref Link: https://stackoverflow.com/questions/8304190/cmake-with-include-and-source-paths-basic-setup
 
+# Ref Link that has the solution: https://stackoverflow.com/questions/73991892/what-is-the-best-way-to-add-assimp-to-a-cmake-project
+
 # This is so we can simply know where the other directories are located in the project
 # Such as if we needed to find common we can do ${INCLUDE_DIR}/common instead of manually typing 3DRenderRotator/common
 set(PROJECT_INCLUDE_DIR 3DRenderRotator)
@@ -39,7 +41,7 @@ add_executable(
 # Letting cmake know that in our current project the cmake modules are located. Just in case we change this cmake
 # include() is used to include the cmake configurations to configure the libraries in their seperate cmake, and to put those configurations
 # into this cmake.
-# Hence, these are modules
+# Hence, these are the modules needed!
 include(${PROJECT_SOURCE_DIR}/cmake/glfw.cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/opencv.cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/assimp.cmake)
